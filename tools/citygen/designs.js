@@ -7,4 +7,6 @@ module.exports = {
   manchester: d => require('./manchester')(d),
   miami: d => require('./miami')(d),
   shanghai: d => require('./shanghai')(d),
+  duesseldorf: d => require('./duesseldorf')(d),
+  gizeh: d => require('./gizeh')(d),
 };

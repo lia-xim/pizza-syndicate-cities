@@ -1,0 +1,284 @@
+{
+  "ersteNummer": 1600,
+  "erstePalette": 453,
+  "eintraege": [
+    {
+      "id": 1600,
+      "name": "S_ZDU2A",
+      "typ": 15,
+      "w": 191,
+      "h": 224,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZDU2A.spr"
+    },
+    {
+      "id": 1601,
+      "name": "S_ZDU2B",
+      "typ": 0,
+      "w": 72,
+      "h": 238,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZDU2B.spr"
+    },
+    {
+      "id": 1602,
+      "name": "S_ZDU3",
+      "typ": 15,
+      "w": 158,
+      "h": 173,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZDU3.spr"
+    },
+    {
+      "id": 1603,
+      "name": "S_ZDU4",
+      "typ": 15,
+      "w": 159,
+      "h": 173,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZDU4.spr"
+    },
+    {
+      "id": 1604,
+      "name": "S_ZGI2A",
+      "typ": 15,
+      "w": 193,
+      "h": 227,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZGI2A.spr"
+    },
+    {
+      "id": 1605,
+      "name": "S_ZGI2B",
+      "typ": 0,
+      "w": 60,
+      "h": 159,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZGI2B.spr"
+    },
+    {
+      "id": 1606,
+      "name": "S_ZGI3",
+      "typ": 15,
+      "w": 191,
+      "h": 209,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZGI3.spr"
+    },
+    {
+      "id": 1607,
+      "name": "S_ZGI4",
+      "typ": 15,
+      "w": 191,
+      "h": 191,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZGI4.spr"
+    }
+  ],
+  "wahrzeichen": {
+    "S_ZDU2": {
+      "stadt": "zdu",
+      "info": "ZDUT2",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1600,
+          "name": "S_ZDU2A",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -8,
+          "dq": 8,
+          "l2": 1601,
+          "name": "S_ZDU2B",
+          "typ": 0
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZDU3": {
+      "stadt": "zdu",
+      "info": "ZDUT3",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1602,
+          "name": "S_ZDU3",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZDU4": {
+      "stadt": "zdu",
+      "info": "ZDUT4",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1603,
+          "name": "S_ZDU4",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZGI2": {
+      "stadt": "zgi",
+      "info": "ZGIT2",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1604,
+          "name": "S_ZGI2A",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -8,
+          "dq": 8,
+          "l2": 1605,
+          "name": "S_ZGI2B",
+          "typ": 0
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZGI3": {
+      "stadt": "zgi",
+      "info": "ZGIT3",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1606,
+          "name": "S_ZGI3",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZGI4": {
+      "stadt": "zgi",
+      "info": "ZGIT4",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1607,
+          "name": "S_ZGI4",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    }
+  }
+}

@@ -2,3 +2,6 @@
 *.mmp binary
 *.wlk binary
 *.png binary
+*.SPR binary
+*.spr binary
+*.bin binary

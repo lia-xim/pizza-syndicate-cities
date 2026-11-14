@@ -1,8 +1,10 @@
-# Fünf neue Städte für Pizza Syndicate
+# Sieben neue Städte für Pizza Syndicate
 
-Diese Mod fügt Pizza Syndicate (Mission CD) fünf neue Städte hinzu: Neapel, Porto, Manchester, Miami und Shanghai. Jede Stadt hat eine eigene, neu gezeichnete Karte mit eigenem Straßen- und Wegenetz. Alle Städte sind auf ein langes, entspanntes Spiel ausgelegt: hohe Kaufkraft, günstige Immobilien und deutlich mehr Kundschaft als in den Originalstädten.
+Diese Mod fügt Pizza Syndicate (Mission CD) sieben neue Städte hinzu: Neapel, Porto, Manchester, Miami, Shanghai, Düsseldorf und Gizeh. Jede Stadt hat eine eigene, neu gezeichnete Karte mit eigenem Straßen- und Wegenetz. Alle Städte sind auf ein langes, entspanntes Spiel ausgelegt: hohe Kaufkraft, günstige Immobilien und deutlich mehr Kundschaft als in den Originalstädten.
 
-Die Mod enthält keine Dateien des Spiels. Alle Grafiken, Symbole und Stadtfotos stammen aus deiner eigenen Installation und werden beim Einspielen dort entnommen.
+Die Mod enthält keine Dateien des Spiels. Gebäude, Symbole und Stadtfotos stammen aus deiner eigenen Installation und werden beim Einspielen dort entnommen.
+
+Dazu kommen sechs eigene Sondergebäude, die für diese Mod in Blender im Stil des Spiels gebaut und gerendert wurden: der Rheinturm und zwei Altbier-Brauhäuser für Düsseldorf, der Kairoer Fernsehturm und zwei Moscheen für Gizeh. Sie stehen wie die Mod unter der MIT-Lizenz.
 
 ## Voraussetzungen
 
@@ -56,7 +58,7 @@ Ein Spielstand merkt sich die Karte, mit der er begonnen wurde. Nach einem Updat
 
 Spielstände aus einer der neuen Städte lassen sich nach der Deinstallation nicht mehr laden.
 
-## Die fünf Städte
+## Die sieben Städte
 
 | Stadt | Land | Besonderheit |
 |---|---|---|
@@ -65,6 +67,8 @@ Spielstände aus einer der neuen Städte lassen sich nach der Deinstallation nic
 | Manchester | Großbritannien | Zwei Stadien |
 | Miami | USA | Hotelmeile am Strand |
 | Shanghai | China | Größte und dichteste Karte |
+| Düsseldorf | Deutschland | Altstadt, Kö und Rheinturm |
+| Gizeh | Ägypten | Pyramiden am Wüstenrand |
 
 ### Neapel (ZNA, Italien)
 
@@ -117,6 +121,31 @@ Shanghai ist die Mega-Metropole der Mod.
 
 Die Karte hat die übliche Größe von 100 × 200 Feldern. Größere Karten würden eine Änderung der Spieldatei verlangen. Shanghai ist deshalb so dicht wie möglich gebaut und hat mehr Wohnhäuser als Lissabon, die Originalstadt mit den meisten.
 
+### Düsseldorf (ZDU, Deutschland)
+
+Der Rhein schwingt in einem großen Bogen durch die Stadt, drei Brücken verbinden die Ufer.
+
+- **Altstadt:** ein dichtes Fußgängerviertel am Rhein, Kneipe an Kneipe, dazwischen freie Ladenlokale. Mittendrin stehen zwei Altbier-Brauhäuser mit Treppengiebel, am Burgplatz St. Lambertus.
+- **Königsallee:** der Kö-Graben mit Läden und Hotels auf beiden Seiten, daneben der Hofgarten und ein Einkaufszentrum.
+- **Rheinturm und Medienhafen:** Der Rheinturm steht am Ufer, mit grauem Schaft, Lichtzeitpegel-Uhr, schrägem Glasband und rot-weißer Antenne. Dahinter liegen die Hafenbecken mit Bürotürmen.
+- **Eller:** eigenes Wohnviertel im Südosten mit Stadtteilzentrum und dem Park am Schloss Eller.
+- **Weitere Ziele:** Oberkassel mit Rheinwiesen auf der anderen Rheinseite, die Arena im Norden und die Uni im Süden.
+
+Rheinturm und Brauhäuser sind eigene Grafiken. Sie sind Sondergebäude: Man kann sie anklicken, sie haben ein eigenes Infobild, und Bewohner besuchen sie als Sehenswürdigkeit. Als echte Kneipen gehen die Brauhäuser nicht, weil das Spiel Kneipen an einer fest eingebauten Grafiknummer erkennt. Für St. Lambertus wird die Münchner Frauenkirche verwendet.
+
+### Gizeh (ZGI, Ägypten)
+
+Gizeh liegt zwischen Wüste und Nil.
+
+- **Wüste:** Im Westen liegt eine kleine Wüstenbucht, oben und unten von Stadtvierteln eingefasst. Darin stehen die drei Pyramiden mit der Sphinx. Am Rand läuft der Sand in die angrenzenden Blöcke und bis an die Straßen. Davor liegt Nazlet el-Samman, die Touristen-Altstadt am Pyramidenplatz: Gassen ohne Autos, dicht an dicht Souvenirläden, Imbisse, Cafés, kleine Hotels und freie Ladenlokale.
+- **Pyramidenstraße:** eine schnurgerade Achse vom Pyramidenplatz quer durch die Stadt.
+- **Kastenstadt:** dichte Blöcke, Imbaba im Norden besonders eng und unregelmäßig. Dazwischen liegen rechteckige Kastenparks, der Zoo und der Orman-Garten an der Universität.
+- **Nil:** Er füllt den Ostrand, mit Uferpromenade und Hotels am Wasser. Auf der Insel Gezira steht der Kairoer Fernsehturm mit seinem Lotusgitter.
+- **Moscheen:** eine osmanische mit großer Kuppel und zwei Bleistift-Minaretten in der Stadtmitte, eine mamlukische mit rot-weiß gestreiften Mauern und Stufenminarett an der Touristen-Altstadt.
+- **Weitere Ziele:** Stadion, Einkaufszentrum und ein Souk.
+
+Mit 283 Gebäuden und 151 Wohnhäusern ist Gizeh fast doppelt so dicht bebaut wie das Original Kairo (154 Gebäude, 78 Wohnhäuser). Kaufkraft und Preise sind auf eine leichte Stadt eingestellt.
+
 ## Nachfrage im Vergleich
 
 Der Vergleich lässt sich jederzeit neu berechnen:
@@ -132,7 +161,9 @@ Die Spalte „Index“ verrechnet Laufkundschaft und Bestellhaushalte mit der Ka
 | Stadt | Figuren | Wohnhäuser | Gebäude | Läden | Hotels | Kaufkraft | Index |
 |---|---|---|---|---|---|---|---|
 | Neapel | 380 | 238 | 390 | 24 | 20 | 1,8 | 240 |
+| Düsseldorf | 380 | 215 | 335 | 25 | 14 | 1,8 | 231 |
 | Shanghai | 380 | 197 | 331 | 32 | 13 | 1,8 | 224 |
+| Gizeh | 380 | 151 | 283 | 26 | 20 | 1,7 | 195 |
 | Miami | 380 | 162 | 279 | 25 | 20 | 1,9 | 222 |
 | Manchester | 380 | 185 | 300 | 26 | 4 | 1,7 | 207 |
 | Porto | 380 | 110 | 196 | 26 | 8 | 1,7 | 180 |
@@ -142,7 +173,7 @@ Die Spalte „Index“ verrechnet Laufkundschaft und Bestellhaushalte mit der Ka
 
 In den Stadtdaten von Lissabon steht als Kaufkraft 0. Deshalb ergibt sich dort kein sinnvoller Index.
 
-Laufkundschaft und Bestellhaushalte liegen in allen fünf Städten beim 1,8- bis 2,4-Fachen der besten Originalstadt. Die Zahl der Figuren ist die wirksamste Stellschraube. In allen Originalstädten sind es 100, in der Mod 380. Mehr als 400 sind nicht möglich, weil das Spiel je Karte höchstens 500 Figuren verwaltet.
+Laufkundschaft und Bestellhaushalte liegen in allen sieben Städten beim 1,8- bis 2,4-Fachen der besten Originalstadt. Die Zahl der Figuren ist die wirksamste Stellschraube. In allen Originalstädten sind es 100, in der Mod 380. Mehr als 400 sind nicht möglich, weil das Spiel je Karte höchstens 500 Figuren verwaltet.
 
 Stadtwerte wie Kaufkraft, Preise, Touristen und Kundengruppen stehen in `staedte.json` und lassen sich dort anpassen. Danach die Mod neu installieren.
 
@@ -154,6 +185,8 @@ Stadtwerte wie Kaufkraft, Preise, Touristen und Kundengruppen stehen in `staedte
 
 ## Für Bastler
 
-Die Karten werden von einem Generator in `tools/citygen` erzeugt. `node tools/citygen/build_all.js` baut alle fünf Karten neu nach `karten/`. Dabei entstehen auch Vorschaubilder (`karten/*.png`).
+Die Karten werden von einem Generator in `tools/citygen` erzeugt. `node tools/citygen/build_all.js` baut alle sieben Karten neu nach `karten/`. Dabei entstehen auch Vorschaubilder (`karten/*.png`).
 
 Vor dem ersten Bauen muss `node tools/citygen/learn.js` einmal laufen. Es lernt aus den Originalkarten, welche Bodenkacheln zusammenpassen.
+
+Die eigenen Gebäude liegen als Blender-Modelle in `tools/art`, als Python-Skripte. `node tools/art/build.js` rendert sie mit Blender 4.2 und schreibt sie ins Grafikformat des Spiels nach `gfx/`. Das Format ist in `tools/sprite.js` beschrieben: 8-Bit-Bilder, Palette in `palette.db`, Einträge in der Grafikliste `MASTERGFX.iso`. Kamera, Licht und Ankerpunkt sind an den Originalen geeicht. Den Pfad zu Blender kann man über die Umgebungsvariable `BLENDER` setzen.

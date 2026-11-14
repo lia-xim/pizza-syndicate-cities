@@ -61,11 +61,14 @@ function indexArchive(list) {
 }
 indexArchive(entries);
 for (const f of fs.readdirSync(path.dirname(resFile))) {
-  if (/\.res$/i.test(f) && f.toLowerCase() !== 'mission.res') indexArchive(readArchive(path.join(path.dirname(resFile), f)));
+  if (/\.res$/i.test(f) && !/^mission\.res/i.test(f)) indexArchive(readArchive(path.join(path.dirname(resFile), f)));
 }
 const findAsset = rel => assetIndex.get(rel.toLowerCase());
 
 const spec = JSON.parse(fs.readFileSync(path.join(__dirname, 'staedte.json'), 'utf8'));
+// Eigene Grafiken (gfx/, aus Blender-Renders gebaut mit tools/art/build.js)
+const gfxFile = path.join(__dirname, 'gfx', 'eintraege.json');
+const gfx = fs.existsSync(gfxFile) ? JSON.parse(fs.readFileSync(gfxFile, 'utf8')) : null;
 const added = [];
 
 function put(name, data) {
@@ -134,6 +137,7 @@ for (const s of spec.staedte) {
     if (fs.existsSync(meta)) {
       const done = new Set();
       for (const w of JSON.parse(fs.readFileSync(meta, 'utf8')).wahrzeichen) {
+        if (gfx && gfx.wahrzeichen[w.gruppe]) continue;   // eigenes Wahrzeichen: Infobild kommt aus gfx/house
         const n = (w.gruppe.match(/(\d+)$/) || [, '1'])[1]; if (done.has(n)) continue;
         const src = { los: 'la', sid: 'syd' }[w.stadt] || w.stadt;
         const data = findAsset(`Sprites${BS}House${BS}${src.toUpperCase()}T${n}.spr`);
@@ -143,6 +147,34 @@ for (const s of spec.staedte) {
     }
   }
   console.log(`+ ${s.name} (${code}), ${s.karte ? 'eigene Karte' : 'Karte nach Vorlage ' + tpl}, Stadtwerte nach ${tpl}, Symbol und ${photos} Foto(s) von ${sym.toUpperCase()}`);
+}
+
+// Eigene Grafiken: alles in mission.res, deren Inhalte Vorrang vor den übrigen Archiven haben
+//  - Bilder unter Sprites\Isodaten (Gebäude) und Sprites\House (Infobilder)
+//  - palette.db: Kopie aus sprites.res mit den neuen Paletten angehängt
+//  - MASTERGFX.iso (Grafikliste der Mission-CD): neue Einträge angehängt
+if (gfx) {
+  const dir = d => path.join(__dirname, 'gfx', d);
+  for (const f of fs.readdirSync(dir('sprites'))) put(`Sprites${BS}Isodaten${BS}${f}`, fs.readFileSync(path.join(dir('sprites'), f)));
+  for (const f of fs.readdirSync(dir('house'))) put(`Sprites${BS}House${BS}${f}`, fs.readFileSync(path.join(dir('house'), f)));
+  const pal = findAsset(`Sprites${BS}IsoDaten${BS}palette.db`); if (!pal) fail('palette.db nicht gefunden.');
+  if (pal.readUInt32LE(0) !== gfx.erstePalette) fail(`palette.db hat ${pal.readUInt32LE(0)} Paletten, erwartet ${gfx.erstePalette}.`);
+  const extra = fs.readFileSync(dir('paletten.bin'));
+  const palData = Buffer.concat([pal, extra]); palData.writeUInt32LE(gfx.erstePalette + extra.length / 768, 0);
+  put(`Sprites${BS}Isodaten${BS}palette.db`, palData);
+  const mi = entries.findIndex(e => /\\isokarten\\mastergfx\.iso$/i.test(e.name)); if (mi < 0) fail('MASTERGFX.iso nicht gefunden.');
+  const m = entries[mi].data, count = m.readUInt32LE(0);
+  const used = new Set(); let o = 4;
+  for (let i = 0; i < count; i++) { const id = m.readUInt32LE(o + 8); if (id !== 0xffffffff) used.add(id & 0xfff); o = m.indexOf(0, o + 24) + 1; }
+  const recs = gfx.eintraege.map(g => {
+    if (used.has(g.id)) fail(`Grafiknummer ${g.id} ist im Spiel schon belegt.`);
+    const r = Buffer.alloc(24); r.writeUInt32LE(g.r0, 0); r.writeUInt32LE(g.r1, 4); r.writeUInt32LE(((g.typ << 16) | g.id) >>> 0, 8);
+    r.writeUInt32LE(g.w, 12); r.writeUInt32LE(g.h, 16); r.writeUInt32LE(g.r5, 20);
+    return Buffer.concat([r, Buffer.from(g.pfad + '\0', 'latin1')]);
+  });
+  const data = Buffer.concat([m, ...recs]); data.writeUInt32LE(count + recs.length, 0);
+  entries[mi] = { name: entries[mi].name, data };
+  console.log(`+ eigene Grafiken: ${gfx.eintraege.length} Bilder, ${extra.length / 768} Palette(n), Grafikliste ${count} -> ${count + recs.length}`);
 }
 
 const target = dryRun || resFile + '.tmp';

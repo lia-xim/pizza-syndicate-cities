@@ -135,6 +135,60 @@
       "karte": "karten/zsh.mmp",
       "wege": "karten/zsh.wlk",
       "einwohner": 380
+    },
+    {
+      "kuerzel": "ZDU",
+      "name": "Düsseldorf",
+      "land": "GER",
+      "vorlage": "MUN",
+      "symbol_vorlage": "HAM",
+      "weltkarte": {
+        "x": 556,
+        "y": 60
+      },
+      "kaufkraft": 1.8,
+      "kosten_kauf": 0.85,
+      "kosten_miete": 0.95,
+      "touristen": 75,
+      "gruppen": [
+        10,
+        14,
+        14,
+        16,
+        20,
+        16,
+        10
+      ],
+      "karte": "karten/zdu.mmp",
+      "wege": "karten/zdu.wlk",
+      "einwohner": 380
+    },
+    {
+      "kuerzel": "ZGI",
+      "name": "Gizeh",
+      "land": "AGY",
+      "vorlage": "KAI",
+      "symbol_vorlage": "KAI",
+      "weltkarte": {
+        "x": 593,
+        "y": 150
+      },
+      "kaufkraft": 1.7,
+      "kosten_kauf": 0.6,
+      "kosten_miete": 0.7,
+      "touristen": 100,
+      "gruppen": [
+        14,
+        14,
+        14,
+        20,
+        14,
+        10,
+        14
+      ],
+      "karte": "karten/zgi.mmp",
+      "wege": "karten/zgi.wlk",
+      "einwohner": 380
     }
   ]
 }

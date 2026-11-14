@@ -1,0 +1,20 @@
+{
+  "wahrzeichen": [
+    {
+      "gruppe": "S_KAI1",
+      "stadt": "kai"
+    },
+    {
+      "gruppe": "S_ZGI2",
+      "stadt": "zgi"
+    },
+    {
+      "gruppe": "S_ZGI3",
+      "stadt": "zgi"
+    },
+    {
+      "gruppe": "S_ZGI4",
+      "stadt": "zgi"
+    }
+  ]
+}

@@ -3,3 +3,6 @@ tools/citygen/cache/
 node_modules/
 *.tmp
 ZIEL.md
+# Zwischenergebnisse der Blender-Renders
+tools/art/out/
+__pycache__/

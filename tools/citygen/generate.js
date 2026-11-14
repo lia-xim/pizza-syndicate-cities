@@ -6,6 +6,15 @@ const I = require('./iso');
 const { writeWlk, MAX } = require('./wlk');
 
 const T = JSON.parse(fs.readFileSync(path.join(__dirname, 'cache', 'tiles.json'), 'utf8'));
+// Eigene Grafiken der Mod (gfx/eintraege.json, gebaut mit tools/art/build.js): Grafiknummern und Wahrzeichen ergänzen
+{
+  const f = path.join(__dirname, '..', '..', 'gfx', 'eintraege.json');
+  if (fs.existsSync(f)) {
+    const g = JSON.parse(fs.readFileSync(f, 'utf8'));
+    for (const e of g.eintraege) T.gfx[e.id] = { id: e.id, typ: e.typ, w: e.w, h: e.h, name: e.name };
+    for (const [name, w] of Object.entries(g.wahrzeichen)) T.landmarks[name] = { city: w.stadt, eigen: true, cells: w.cells };
+  }
+}
 const K = (p, q) => p + ',' + q;
 const SPECIAL_DECO = /TUNNEL|SHIP|HAFE|^WERB|^PARK2_06$|^PARK2_12$|^S_/;
 
@@ -51,8 +60,17 @@ class Design {
   // Alle betroffenen Zellen samt Rand müssen Gehweg oder Park sein.
   landmark(name, p, q) {
     const lm = T.landmarks[name]; if (!lm) throw new Error('Wahrzeichen unbekannt: ' + name);
-    for (const c of lm.cells) for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) { const k = this.get(p + c.dp + a, q + c.dq + b); if (k !== 'S' && k !== 'P') return false; }
+    const ground = this.landmarkGround || ['S', 'P'];   // Gizeh: Pyramiden stehen auf Sand ('N')
+    // Aufgesetzte Teile hoher Türme (nur Bild, ohne Grundfläche, weit oberhalb des Ankerfelds) brauchen nur ein freies Feld
+    const top = c => c.l2 && !c.fp && T.gfx[c.l2 & 0xfff].typ < 7;
+    const busy = new Set(this.objects.map(o => K(o.p, o.q)));
     for (const c of lm.cells) {
+      if (top(c)) { const k = this.get(p + c.dp, q + c.dq); if (!k || k === 'B' || k === 'X' || busy.has(K(p + c.dp, q + c.dq))) return false; continue; }
+      for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) if (!ground.includes(this.get(p + c.dp + a, q + c.dq + b))) return false;
+    }
+    for (const c of lm.cells) {
+      // Über dem Turm nichts bauen: Gebäude in den Feldern dazwischen würden über den aufgesetzten Teil gezeichnet
+      if (top(c)) { const n = Math.max(Math.abs(c.dp), Math.abs(c.dq)); for (let j = 1; j <= n; j++) for (const [a, b] of [[0, 0], [1, 0], [0, -1], [-1, 0], [0, 1]]) this.noBuild.add(K(p - j + a, q + j + b)); }
       if (c.fp) this.set(p + c.dp, q + c.dq, 'B');
       if (c.l2) this.object(p + c.dp, q + c.dq, c.l2);
       // Sockel des Gebäudeteils nicht begehen, auch wo das Original dort normalen Boden hat

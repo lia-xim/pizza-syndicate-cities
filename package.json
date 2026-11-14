@@ -1,7 +1,7 @@
 {
   "name": "pizza-syndicate-cities",
   "version": "1.0.0",
-  "description": "Fünf neue Städte für Pizza Syndicate (Mission CD): Neapel, Porto, Manchester, Miami, Shanghai",
+  "description": "Sieben neue Städte für Pizza Syndicate (Mission CD): Neapel, Porto, Manchester, Miami, Shanghai, Düsseldorf, Gizeh",
   "license": "MIT",
   "private": true,
   "engines": { "node": ">=16" },
