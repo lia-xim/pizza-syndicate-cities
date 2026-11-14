@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.mmp binary
+*.wlk binary
+*.png binary

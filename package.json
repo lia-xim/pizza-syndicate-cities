@@ -1,0 +1,15 @@
+{
+  "name": "pizza-syndicate-cities",
+  "version": "1.0.0",
+  "description": "Fünf neue Städte für Pizza Syndicate (Mission CD): Neapel, Porto, Manchester, Miami, Shanghai",
+  "license": "MIT",
+  "private": true,
+  "engines": { "node": ">=16" },
+  "scripts": {
+    "install-mod": "node install.js",
+    "uninstall-mod": "node install.js --uninstall",
+    "nachfrage": "node tools/nachfrage.js",
+    "learn": "node tools/citygen/learn.js",
+    "build-maps": "node tools/citygen/build_all.js"
+  }
+}

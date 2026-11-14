@@ -1,0 +1,5 @@
+# Aus den Spieldateien gelernte Kacheldaten: werden mit tools/citygen/learn.js lokal erzeugt
+tools/citygen/cache/
+node_modules/
+*.tmp
+ZIEL.md

@@ -1,0 +1,140 @@
+{
+  "_hinweis": "Kürzel müssen mit Z beginnen, damit die Reihenfolge der Originalstädte (und damit alte Spielstände) unverändert bleibt. Kaufkraft und Kosten wie im Spiel (1.0 = normal). Gruppen in Prozent: Kids, Teens, Studies, Prolls, Yuppies, Bonzen, Grufties. 'vorlage' liefert die übrigen Stadtwerte (Klima, Preisniveau), 'symbol_vorlage' Symbol und Fotos.",
+  "staedte": [
+    {
+      "kuerzel": "ZNA",
+      "name": "Neapel",
+      "land": "ITA",
+      "vorlage": "ROM",
+      "symbol_vorlage": "ROM",
+      "weltkarte": {
+        "x": 585,
+        "y": 110
+      },
+      "kaufkraft": 1.8,
+      "kosten_kauf": 0.8,
+      "kosten_miete": 0.9,
+      "touristen": 90,
+      "gruppen": [
+        16,
+        16,
+        14,
+        18,
+        14,
+        10,
+        12
+      ],
+      "karte": "karten/zna.mmp",
+      "wege": "karten/zna.wlk",
+      "einwohner": 380
+    },
+    {
+      "kuerzel": "ZPO",
+      "name": "Porto",
+      "land": "POR",
+      "vorlage": "LIS",
+      "symbol_vorlage": "LIS",
+      "weltkarte": {
+        "x": 516,
+        "y": 103
+      },
+      "kaufkraft": 1.7,
+      "kosten_kauf": 0.8,
+      "kosten_miete": 0.9,
+      "touristen": 95,
+      "gruppen": [
+        12,
+        14,
+        18,
+        16,
+        16,
+        10,
+        14
+      ],
+      "karte": "karten/zpo.mmp",
+      "wege": "karten/zpo.wlk",
+      "einwohner": 380
+    },
+    {
+      "kuerzel": "ZMA",
+      "name": "Manchester",
+      "land": "GRB",
+      "vorlage": "LON",
+      "symbol_vorlage": "LON",
+      "weltkarte": {
+        "x": 531,
+        "y": 46
+      },
+      "kaufkraft": 1.7,
+      "kosten_kauf": 0.9,
+      "kosten_miete": 1,
+      "touristen": 70,
+      "gruppen": [
+        10,
+        20,
+        14,
+        26,
+        14,
+        6,
+        10
+      ],
+      "karte": "karten/zma.mmp",
+      "wege": "karten/zma.wlk",
+      "einwohner": 380
+    },
+    {
+      "kuerzel": "ZMI",
+      "name": "Miami",
+      "land": "USA",
+      "vorlage": "LA",
+      "symbol_vorlage": "LA",
+      "weltkarte": {
+        "x": 438,
+        "y": 150
+      },
+      "kaufkraft": 1.9,
+      "kosten_kauf": 0.9,
+      "kosten_miete": 1,
+      "touristen": 100,
+      "gruppen": [
+        8,
+        10,
+        10,
+        12,
+        26,
+        24,
+        10
+      ],
+      "karte": "karten/zmi.mmp",
+      "wege": "karten/zmi.wlk",
+      "einwohner": 380
+    },
+    {
+      "kuerzel": "ZSH",
+      "name": "Shanghai",
+      "land": "CHI",
+      "vorlage": "HON",
+      "symbol_vorlage": "HON",
+      "weltkarte": {
+        "x": 703,
+        "y": 112
+      },
+      "kaufkraft": 1.8,
+      "kosten_kauf": 0.9,
+      "kosten_miete": 1,
+      "touristen": 80,
+      "gruppen": [
+        14,
+        14,
+        16,
+        20,
+        20,
+        8,
+        8
+      ],
+      "karte": "karten/zsh.mmp",
+      "wege": "karten/zsh.wlk",
+      "einwohner": 380
+    }
+  ]
+}
