@@ -118,6 +118,11 @@ function porto(d) {
     for (let p = pa; p <= pc; p++) for (let q = pb; q <= pe; q++) d.noBuild.add(K(p, q));
     for (const [p0, q0] of [[pa, pb], [pa, pe - 1], [pc - 1, pb], [pc - 1, pe - 1]]) d.rect(p0, q0, p0 + 1, q0 + 1, 'P');
     if (!d.landmark('S_VEN1', ...PIAZZA.tower)) throw new Error('Kein Platz für den Campanile'); }
+  // Torre dos Clérigos (eigene Grafik): nahe der Piazza auf festem Boden
+  { const [a, b, c, e] = PIAZZA.rect; const pc = (a + c) / 2 + 9, qc = (b + e) / 2 - 6; let ok = false;
+    const cand = cells().filter(([p, q]) => d.get(p, q) === 'S').sort((u, v) => Math.hypot(u[0] - pc, u[1] - qc) - Math.hypot(v[0] - pc, v[1] - qc)).slice(0, 800);
+    for (const [p, q] of cand) if (d.landmark('S_ZPO2', p, q)) { ok = true; break; }
+    if (!ok) throw new Error('Kein Platz für den Clérigos-Turm'); }
   // Kleine Gärten (Campi mit Bäumen) im Inneren großer Inseln
   let regs = L.regions(d).filter(r => r.size > 120 && !r.cells.has(K(sp, sq)));
   for (const r of regs.sort(() => d.rand() - 0.5).slice(0, 7)) { const p = Math.round(r.pc), q = Math.round(r.qc); let ok = true; for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) if (d.get(p + a, q + b) !== 'S') ok = false; if (ok) d.rect(p - 1, q - 1, p + 1, q + 1, 'P'); }

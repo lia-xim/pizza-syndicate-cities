@@ -53,7 +53,7 @@ module.exports = function miami(d) {
   const onBeach = l => l.p >= 88;
   const downtown = l => { const [x, y] = O.PQ2S(l.p, l.q); return x > 0.35 && x < 0.62 && y > 0.3 && y < 0.65; };
   return O.furnish(d, {
-    plazas, landmarks: [['S_LOS1', 0.35, 0.18]], gardens: 4,
+    plazas, landmarks: [['S_LOS1', 0.35, 0.18], ['S_ZMI2', 0.84, 0.5]], gardens: 4,   // Art-déco-Hotel am Ocean Drive (eigene Grafik)
     special: (d, lots, near, got) => {
       // Hotelmeile: Hotels in den Reihen an Collins Avenue und Ocean Drive
       let n = 0; for (const l of lots.filter(l => !l.used && onBeach(l)).sort(() => d.rand() - 0.5)) if (n < 18 && L.put(d, l, 'HOTE')) n++;

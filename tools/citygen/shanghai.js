@@ -22,7 +22,7 @@ module.exports = function shanghai(d) {
   const PEOPLE = O.rectAt(0.37, 0.49, 3), TOWER = O.rectAt(0.74, 0.47, 3), STADION = O.rectAt(0.16, 0.74, 6), UNI = O.rectAt(0.18, 0.12, 5), EKZ = O.rectAt(0.85, 0.24, 5), XINTIANDI = O.rectAt(0.3, 0.6, 3);
   const plazas = [
     { rect: PEOPLE, landmark: 'S_NY2' },
-    { rect: TOWER, landmark: 'S_TOK1' },
+    { rect: TOWER, landmark: 'S_ZSH3' },                 // Oriental Pearl Tower (eigene Grafik)
     { rect: STADION, center: 'STAD', leer: 3, extras: ['CLUB', 'FZZ', 'KAUF'] },
     { rect: UNI, center: 'UNIV', leer: 2, extras: ['FZZ', 'CLUB'] },
     { rect: EKZ, center: 'EKZ', leer: 3, extras: ['BUER', 'HOTE', 'KAUF'] },

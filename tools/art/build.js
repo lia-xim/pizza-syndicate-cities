@@ -31,6 +31,12 @@ const OBJEKTE = [
             { s: 'B', cell: [-8, 8], rows: [0, 256], vorlage: { typ: 0x00, r0: 2, r1: 0, r5: 0x30003 } }] },
   ...[['S_ZGI3', 'moschee1.py', 'ZGIT3'], ['S_ZGI4', 'moschee2.py', 'ZGIT4']].map(([name, modell, info]) => ({ name, modell, hoehe: 256, anker: 192, stadt: 'ZGI', info,
     parts: [{ s: '', cell: [0, 0], rows: [0, 256], vorlage: { typ: 0x0f, r0: 2, r1: 0, r5: 0x30003 } }] })),
+  // Wahrzeichen der übrigen Städte: Perlturm (Shanghai) und Clérigos-Turm (Porto) zweiteilig, die anderen einteilig
+  ...[['S_ZSH3', 'perlturm.py', 'ZSH', 'ZSHT3'], ['S_ZPO2', 'clerigos.py', 'ZPO', 'ZPOT2']].map(([name, modell, stadt, info]) => ({ name, modell, hoehe: 512, anker: 448, stadt, info,
+    parts: [{ s: 'A', cell: [0, 0], rows: [256, 512], vorlage: { typ: 0x0f, r0: 2, r1: 0, r5: 0x30003 } },
+            { s: 'B', cell: [-8, 8], rows: [0, 256], vorlage: { typ: 0x00, r0: 2, r1: 0, r5: 0x30003 } }] })),
+  ...[['S_ZNA2', 'castelnuovo.py', 'ZNA', 'ZNAT2'], ['S_ZMA2', 'spinnerei.py', 'ZMA', 'ZMAT2'], ['S_ZMI2', 'artdeco.py', 'ZMI', 'ZMIT2']].map(([name, modell, stadt, info]) => ({ name, modell, hoehe: 256, anker: 192, stadt, info,
+    parts: [{ s: '', cell: [0, 0], rows: [0, 256], vorlage: { typ: 0x0f, r0: 2, r1: 0, r5: 0x30003 } }] })),
 ];
 
 // ---- Farbreduktion: Median-Cut auf höchstens n Farben ----

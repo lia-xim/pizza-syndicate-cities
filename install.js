@@ -123,9 +123,12 @@ for (const s of spec.staedte) {
     if (!data) fail(`${code}: Symbol ${sym}${suffix}.spr nicht gefunden.`);
     put(`Sprites${BS}Misc${BS}${lc}${suffix}.spr`, data);
   }
+  // Stadtfotos: eigene Renders aus gfx/fotos (city<kürzel><n>.jpg, 200 x 200), sonst die der Vorlagestadt
   let photos = 0;
+  const own = i => path.join(__dirname, 'gfx', 'fotos', `city${lc}${i}.jpg`);
+  const ownPhotos = fs.existsSync(own(1));
   for (let i = 1; i <= 9; i++) {
-    const data = findAsset(`Sprites${BS}HouseInfo${BS}city${sym}${i}.jpg`);
+    const data = ownPhotos ? (fs.existsSync(own(i)) ? fs.readFileSync(own(i)) : null) : findAsset(`Sprites${BS}HouseInfo${BS}city${sym}${i}.jpg`);
     if (!data) break;
     put(`Sprites${BS}HouseInfo${BS}city${lc}${i}.jpg`, data);
     photos++;
@@ -146,7 +149,7 @@ for (const s of spec.staedte) {
       }
     }
   }
-  console.log(`+ ${s.name} (${code}), ${s.karte ? 'eigene Karte' : 'Karte nach Vorlage ' + tpl}, Stadtwerte nach ${tpl}, Symbol und ${photos} Foto(s) von ${sym.toUpperCase()}`);
+  console.log(`+ ${s.name} (${code}), ${s.karte ? 'eigene Karte' : 'Karte nach Vorlage ' + tpl}, Stadtwerte nach ${tpl}, Symbol von ${sym.toUpperCase()}, ${photos} Foto(s) ${ownPhotos ? 'eigene' : 'von ' + sym.toUpperCase()}`);
 }
 
 // Eigene Grafiken: alles in mission.res, deren Inhalte Vorrang vor den übrigen Archiven haben

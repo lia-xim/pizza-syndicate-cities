@@ -1,6 +1,6 @@
 # Pizza Syndicate: sieben neue Städte
 
-**English:** Seven new, hand-designed cities for the 1999 business sim *Pizza Syndicate* (Mission CD): Naples, Porto, Manchester, Miami, Shanghai, Düsseldorf and Giza. Each city has its own map with its own street and footpath network. All cities have high demand and low difficulty. Six landmark buildings were modelled and rendered in Blender in the game's own style (Rheinturm, two Altbier breweries, Cairo Tower, two mosques). The mod ships **no game files**. A Node.js installer builds everything from your own copy of the game, backs up the original first and can uninstall completely. The documentation is in German, see [LIESMICH.md](LIESMICH.md).
+**English:** Seven new, hand-designed cities for the 1999 business sim *Pizza Syndicate* (Mission CD): Naples, Porto, Manchester, Miami, Shanghai, Düsseldorf and Giza. Each city has its own map with its own street and footpath network. All cities have high demand and low difficulty. Eleven landmark buildings were modelled and rendered in Blender in the game's own style (Oriental Pearl Tower, Rheinturm, Cairo Tower, Torre dos Clérigos, Castel Nuovo, two Altbier breweries, two mosques, an art deco hotel and a Manchester cotton mill), plus own city photos. The mod ships **no game files**. A Node.js installer builds everything from your own copy of the game, backs up the original first and can uninstall completely. The documentation is in German, see [LIESMICH.md](LIESMICH.md).
 
 ---
 
@@ -19,6 +19,8 @@ Sieben neue Städte für Pizza Syndicate mit Mission CD. Jede hat eine neu gezei
 Laufkundschaft und Bestellhaushalte liegen in allen sieben Städten beim 1,8- bis 2,4-Fachen der besten Originalstadt. Die Zahlen stehen in der LIESMICH.
 
 ## Kurz
+
+ZIP unter „Releases“ herunterladen, entpacken und `installieren.bat` doppelklicken. Oder per Git:
 
 ```
 git clone https://github.com/lia-xim/pizza-syndicate-cities.git
@@ -39,6 +41,19 @@ Voraussetzungen:
 Die neuen Städte gibt es in **neuen Spielen**. Alte Spielstände bleiben unverändert und laufen weiter in ihrer bisherigen Stadt.
 
 Die vollständige Anleitung steht in [LIESMICH.md](LIESMICH.md). Sie erklärt auch den Fenstermodus und große Bildschirme mit cnc-ddraw.
+
+## Im Spiel
+
+| | |
+|---|---|
+| ![Oriental Pearl Tower in Shanghai](docs/bilder/shanghai-perlturm.jpg) | ![Pyramiden und Sphinx in Gizeh](docs/bilder/gizeh-pyramiden.jpg) |
+| Shanghai: Oriental Pearl Tower am Huangpu | Gizeh: Pyramiden und Sphinx in der Wüstenbucht |
+| ![Rheinturm mit Infobild](docs/bilder/duesseldorf-rheinturm.jpg) | ![Altbier-Brauhaus in der Altstadt](docs/bilder/duesseldorf-brauhaus.jpg) |
+| Düsseldorf: Rheinturm, angeklickt, mit eigenem Infobild | Düsseldorf: Altbier-Brauhaus neben St. Lambertus |
+| ![Kairoer Fernsehturm auf Gezira](docs/bilder/gizeh-fernsehturm.jpg) | ![Osmanische Moschee](docs/bilder/gizeh-moschee.jpg) |
+| Gizeh: Kairoer Fernsehturm auf der Nilinsel | Gizeh: osmanische Moschee mit zwei Minaretten |
+
+Bildschirmfotos aus dem Spiel. Spielgrafik und Oberfläche © der jeweiligen Rechteinhaber von Pizza Syndicate, die markierten Sondergebäude sind eigene Grafiken der Mod.
 
 ## Karten
 

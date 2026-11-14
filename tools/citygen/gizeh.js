@@ -99,9 +99,22 @@ module.exports = function gizeh(d) {
 
   const nile = l => O.PQ2S(l.p, l.q)[0] > 0.74;
   const inNazlet = l => O.inRect(l.p, l.q, NAZLET);
+  // Moscheen mit freiem Vorplatz (sonst verdecken die Häuser davor sie): Feld vor dem Eingang unten bleibt unbebaut
+  for (const [name, x, y] of [['S_ZGI3', 0.6, 0.36], ['S_ZGI4', 0.29, 0.47]]) {
+    const [pc, qc] = O.S2PQ(x, y); let at = null;
+    const cand = O.cells(d).filter(([p, q]) => d.get(p, q) === 'S').sort((u, v) => Math.hypot(u[0] - pc, u[1] - qc) - Math.hypot(v[0] - pc, v[1] - qc)).slice(0, 600);
+    for (const [p, q] of cand) {
+      // Vorplatz 4 x 4 Felder vor der Moschee muss Gehweg sein
+      let free = true; for (let a = 1; a <= 4 && free; a++) for (let b = -4; b <= -1; b++) if (d.get(p + a, q + b) !== 'S') { free = false; break; }
+      if (free && d.landmark(name, p, q)) { at = [p, q]; break; }
+    }
+    if (!at) throw new Error('Kein Platz für ' + name);
+    for (let a = 1; a <= 4; a++) for (let b = -4; b <= -1; b++) d.noBuild.add(K(at[0] + a, at[1] + b));
+    for (const [a, b] of [[4, -4], [1, -4], [4, -1]]) if (d.get(at[0] + a, at[1] + b) === 'S') d.set(at[0] + a, at[1] + b, 'P');
+  }
   return O.furnish(d, {
     // Zwei Moscheen (eigene Grafiken): osmanisch in der Stadtmitte, mamlukisch am Rand der Touristen-Altstadt
-    plazas, gardens: 0, landmarks: [['S_ZGI3', 0.6, 0.36], ['S_ZGI4', 0.29, 0.47]],
+    plazas, gardens: 0,
     special: (d, lots, near, got, taken) => {
       const add = (k, n = 1) => { got[k] = (got[k] || 0) + n; };
       // Hotels am Nilufer

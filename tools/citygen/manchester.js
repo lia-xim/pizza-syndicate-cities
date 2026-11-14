@@ -61,7 +61,7 @@ module.exports = function manchester(d) {
   const dw = O.distanceTo(d, ['W', 'L', 'U']);
   const stadia = plazas.filter(p => p.center === 'STAD').map(p => [(p.rect[0] + p.rect[2]) / 2, (p.rect[1] + p.rect[3]) / 2]);
   return O.furnish(d, {
-    plazas, gardens: 4,
+    plazas, gardens: 4, landmarks: [['S_ZMA2', 0.62, 0.3]],   // Baumwollspinnerei in Ancoats (eigene Grafik)
     special: (d, lots, near, got) => {
       // Kneipenstraßen rund um beide Stadien
       for (const [sp, sq] of stadia) { let n = 0; for (const l of lots.filter(l => !l.used && Math.abs(l.p - sp) + Math.abs(l.q - sq) <= 16).sort(() => d.rand() - 0.5)) if (n < 7 && L.put(d, l, 'CLUB')) n++; got.CLUB = (got.CLUB || 0) + n; }

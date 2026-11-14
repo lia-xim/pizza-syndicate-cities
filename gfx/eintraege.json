@@ -89,6 +89,83 @@
       "r1": 0,
       "r5": 196611,
       "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZGI4.spr"
+    },
+    {
+      "id": 1608,
+      "name": "S_ZSH3A",
+      "typ": 15,
+      "w": 191,
+      "h": 225,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZSH3A.spr"
+    },
+    {
+      "id": 1609,
+      "name": "S_ZSH3B",
+      "typ": 0,
+      "w": 56,
+      "h": 224,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZSH3B.spr"
+    },
+    {
+      "id": 1610,
+      "name": "S_ZPO2A",
+      "typ": 15,
+      "w": 191,
+      "h": 236,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZPO2A.spr"
+    },
+    {
+      "id": 1611,
+      "name": "S_ZPO2B",
+      "typ": 0,
+      "w": 40,
+      "h": 74,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZPO2B.spr"
+    },
+    {
+      "id": 1612,
+      "name": "S_ZNA2",
+      "typ": 15,
+      "w": 149,
+      "h": 115,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZNA2.spr"
+    },
+    {
+      "id": 1613,
+      "name": "S_ZMA2",
+      "typ": 15,
+      "w": 191,
+      "h": 211,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZMA2.spr"
+    },
+    {
+      "id": 1614,
+      "name": "S_ZMI2",
+      "typ": 15,
+      "w": 160,
+      "h": 152,
+      "r0": 2,
+      "r1": 0,
+      "r5": 196611,
+      "pfad": "P:\\Grafik\\Stadt\\IsoH\\S_ZMI2.spr"
     }
   ],
   "wahrzeichen": {
@@ -260,6 +337,165 @@
           "dq": 0,
           "l2": 1607,
           "name": "S_ZGI4",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZSH3": {
+      "stadt": "zsh",
+      "info": "ZSHT3",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1608,
+          "name": "S_ZSH3A",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -8,
+          "dq": 8,
+          "l2": 1609,
+          "name": "S_ZSH3B",
+          "typ": 0
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZPO2": {
+      "stadt": "zpo",
+      "info": "ZPOT2",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1610,
+          "name": "S_ZPO2A",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -8,
+          "dq": 8,
+          "l2": 1611,
+          "name": "S_ZPO2B",
+          "typ": 0
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZNA2": {
+      "stadt": "zna",
+      "info": "ZNAT2",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1612,
+          "name": "S_ZNA2",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZMA2": {
+      "stadt": "zma",
+      "info": "ZMAT2",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1613,
+          "name": "S_ZMA2",
+          "typ": 15,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 0,
+          "fp": true
+        },
+        {
+          "dp": -1,
+          "dq": 1,
+          "fp": true
+        },
+        {
+          "dp": 0,
+          "dq": 1,
+          "fp": true
+        }
+      ]
+    },
+    "S_ZMI2": {
+      "stadt": "zmi",
+      "info": "ZMIT2",
+      "cells": [
+        {
+          "dp": 0,
+          "dq": 0,
+          "l2": 1614,
+          "name": "S_ZMI2",
           "typ": 15,
           "fp": true
         },

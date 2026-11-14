@@ -4,7 +4,19 @@ Diese Mod fügt Pizza Syndicate (Mission CD) sieben neue Städte hinzu: Neapel, 
 
 Die Mod enthält keine Dateien des Spiels. Gebäude, Symbole und Stadtfotos stammen aus deiner eigenen Installation und werden beim Einspielen dort entnommen.
 
-Dazu kommen sechs eigene Sondergebäude, die für diese Mod in Blender im Stil des Spiels gebaut und gerendert wurden: der Rheinturm und zwei Altbier-Brauhäuser für Düsseldorf, der Kairoer Fernsehturm und zwei Moscheen für Gizeh. Sie stehen wie die Mod unter der MIT-Lizenz.
+Dazu kommen elf eigene Sondergebäude, die für diese Mod in Blender im Stil des Spiels gebaut und gerendert wurden. Jede Stadt hat mindestens eines:
+
+| Stadt | Eigene Sondergebäude |
+|---|---|
+| Neapel | Castel Nuovo |
+| Porto | Torre dos Clérigos |
+| Manchester | Baumwollspinnerei mit Schornstein |
+| Miami | Art-déco-Hotel am Ocean Drive |
+| Shanghai | Oriental Pearl Tower |
+| Düsseldorf | Rheinturm, zwei Altbier-Brauhäuser |
+| Gizeh | Kairoer Fernsehturm, zwei Moscheen |
+
+Alle lassen sich anklicken, haben ein eigenes Infobild und werden von den Bewohnern als Sehenswürdigkeit besucht. Auch die Stadtfotos aller sieben Städte sind eigene Renderbilder. Grafiken und Fotos stehen wie die Mod unter der MIT-Lizenz.
 
 ## Voraussetzungen
 
@@ -15,7 +27,9 @@ Dazu kommen sechs eigene Sondergebäude, die für diese Mod in Blender im Stil d
 ## Installieren
 
 1. Das Spiel beenden.
-2. Eine Eingabeaufforderung im Ordner der Mod öffnen und ausführen:
+2. Im Ordner der Mod `installieren.bat` doppelklicken. Liegt das Spiel nicht in `C:Pizza Syndicate`, den Spielordner mit der Maus auf `installieren.bat` ziehen.
+
+   Oder in einer Eingabeaufforderung im Ordner der Mod:
 
    ```
    node install.js
@@ -48,7 +62,7 @@ Pizza Syndicate läuft auf heutigen Windows-Versionen am besten mit [cnc-ddraw](
 1. Die aktuelle `cnc-ddraw.zip` von der Release-Seite herunterladen und in den Spielordner entpacken. Dabei kommen `ddraw.dll`, `ddraw.ini` und der Ordner `Shaders` neben `Pizza_Mission.exe`.
 2. Den Abschnitt aus [`extras/ddraw-pizza-syndicate.ini`](extras/ddraw-pizza-syndicate.ini) ans Ende der `ddraw.ini` kopieren.
 
-Das Spiel zeichnet intern mit 800 × 600 Pixeln im Format 4:3. Ein 16:9-Bild ist deshalb nicht möglich, links und rechts bleiben Ränder. Für scharfe Pixel ein ganzzahliges Vielfaches wählen: 1600 × 1200 für Full HD und WQHD, 2400 × 1800 für 4K.
+Das Spiel zeichnet intern mit 800 × 600 Pixeln im Format 4:3. Ein 16:9-Bild ist deshalb nicht möglich, links und rechts bleiben Ränder. Für scharfe Pixel ein ganzzahliges Vielfaches wählen. 1600 × 1200 passt auf WQHD und auf 4K mit 150 % Windows-Skalierung, 2400 × 1800 nur auf 4K mit 100 %. Mit Alt+Enter schaltet das Spiel jederzeit auf Vollbild.
 
 ## Spielstände
 
@@ -76,6 +90,7 @@ Neapel ist die dichteste Stadt der Mod mit rund 390 Gebäuden.
 
 - **Lage:** eine Altstadt am Golf. Die Spaccanapoli und die Via Toledo führen hindurch.
 - **Wahrzeichen:** die Piazza del Plebiscito und das Castel dell'Ovo. Die Burg steht auf einer kleinen Insel, ein Damm führt hin.
+- **Castel Nuovo:** die Burg am Hafen mit runden Zinnentürmen aus grauem Tuff und dem weißen Triumphbogen (eigene Grafik).
 - **Weitere Ziele:** ein Stadion, eine Uni, ein Einkaufszentrum und Häfen mit Schiffen.
 - **Ladenlokale:** Die freien Ladenlokale liegen eng beieinander. Alle Konkurrenten kämpfen um dieselben Viertel.
 
@@ -85,7 +100,7 @@ Porto ist eine Lagunenstadt im Stil von Venedig.
 
 - **Lage:** Eine geschwungene Hauptinsel und eine zweite Insel sind von schmalen Kanälen durchzogen. Ein breiter Kanal windet sich durch die Mitte.
 - **Verkehr:** Die Stadt besteht fast nur aus Fußwegen. Eine einzige Ringstraße mit Querstraße trägt den Lieferverkehr. Deshalb stehen Häuser auch weit weg von der Straße.
-- **Ziele:** eine große Piazza mit dem Wahrzeichen aus Venedig und ein Stadion.
+- **Ziele:** eine große Piazza mit dem Wahrzeichen aus Venedig, der barocke Granitturm Torre dos Clérigos (eigene Grafik) und ein Stadion.
 - **Kundschaft:** viele Touristen.
 
 Venedig hat im Spiel eine eigene Bootslieferung. Die ist fest an die Originalstadt Venedig gebunden und ließe sich nur durch eine Änderung der Spieldatei übertragen. Darauf wurde bewusst verzichtet. In Porto wird deshalb per Auto geliefert.
@@ -97,6 +112,7 @@ Manchester ist die Stadionstadt der Mod.
 - **Stadien:** zwei, Old Trafford im Westen am Kanal und das Etihad im Osten. Um beide herum liegen Kneipen- und Clubstraßen.
 - **Kanal:** Der Schiffskanal endet in den Hafenbecken von Salford Quays, mit Piers, Lagerhallen und Schiffen.
 - **Innenstadt:** Rathaus, Piccadilly Gardens, das Northern Quarter voller Clubs und ein Ring um die City.
+- **Ancoats:** eine rote Backstein-Baumwollspinnerei mit hohem Schornstein, Erinnerung an „Cottonopolis“ (eigene Grafik).
 - **Wohnviertel:** lange Reihenhausstraßen.
 - **Kundschaft:** viele Teens und Prolls.
 
@@ -105,7 +121,7 @@ Manchester ist die Stadionstadt der Mod.
 Miami steht stellvertretend für eine Flughafenstadt, für die es im Spiel keine Grafik gibt.
 
 - **Lage:** Zwei Dämme führen vom Festland nach Miami Beach.
-- **Hotelmeile:** Am Ocean Drive reihen sich die Hotels am Strand.
+- **Hotelmeile:** Am Ocean Drive reihen sich die Hotels am Strand, mittendrin ein pastellfarbenes Art-déco-Hotel mit Neonschrift (eigene Grafik).
 - **Hafen:** Am Hafen auf der Insel liegen Kreuzfahrtschiffe.
 - **Weitere Orte:** die Venetian Islands und Hochhäuser in Downtown.
 - **Kundschaft:** Touristen-Gewicht 100, dazu viele Yuppies und Bonzen.
@@ -116,7 +132,7 @@ Shanghai ist die Mega-Metropole der Mod.
 
 - **Lage:** Der breite Huangpu teilt die Stadt, zwei Brücken verbinden die Ufer.
 - **Puxi (Westufer):** der Bund mit Uferpromenade, Banken und Hotels. Dazu People's Square mit großem Park, die Nanjing Road als autofreie Ladenstraße, die Altstadt am Yu-Garten, Stadion und Uni.
-- **Pudong (Ostufer):** Lujiazui mit Bürotürmen und Fernsehturm, die Century Avenue und ein Einkaufszentrum.
+- **Pudong (Ostufer):** Lujiazui mit Bürotürmen und dem Oriental Pearl Tower mit seinen rosa Kugeln (eigene Grafik), die Century Avenue und ein Einkaufszentrum.
 - **Freie Ladenlokale:** die meisten der Mod.
 
 Die Karte hat die übliche Größe von 100 × 200 Feldern. Größere Karten würden eine Änderung der Spieldatei verlangen. Shanghai ist deshalb so dicht wie möglich gebaut und hat mehr Wohnhäuser als Lissabon, die Originalstadt mit den meisten.

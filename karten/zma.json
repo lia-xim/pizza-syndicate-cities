@@ -3,6 +3,10 @@
     {
       "gruppe": "S_LON1",
       "stadt": "lon"
+    },
+    {
+      "gruppe": "S_ZMA2",
+      "stadt": "zma"
     }
   ]
 }

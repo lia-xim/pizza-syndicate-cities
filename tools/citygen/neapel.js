@@ -50,7 +50,7 @@ module.exports = function neapel(d) {
   d.harbors = O.autoHarbors(d, 3, 14);
 
   return O.furnish(d, {
-    plazas, landmarks: [['S_LIS1', 0.71, 0.88]], gardens: 6,
+    plazas, landmarks: [['S_LIS1', 0.71, 0.88], ['S_ZNA2', 0.6, 0.66]], gardens: 6,   // Castel Nuovo (eigene Grafik) am Hafen
     special: (d, lots, near, got, taken) => {
       // Ladenstraßen: Spaccanapoli und Via Toledo
       const onAxis = l => { const [x, y] = O.PQ2S(l.p, l.q); return Math.abs(y - (0.47 - 0.045 * x)) < 0.035 || Math.abs(x - 0.42) < 0.03; };
