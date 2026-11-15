@@ -62,7 +62,7 @@ Pizza Syndicate läuft auf heutigen Windows-Versionen am besten mit [cnc-ddraw](
 1. Die aktuelle `cnc-ddraw.zip` von der Release-Seite herunterladen und in den Spielordner entpacken. Dabei kommen `ddraw.dll`, `ddraw.ini` und der Ordner `Shaders` neben `Pizza_Mission.exe`.
 2. Den Abschnitt aus [`extras/ddraw-pizza-syndicate.ini`](extras/ddraw-pizza-syndicate.ini) ans Ende der `ddraw.ini` kopieren.
 
-Das Spiel zeichnet intern mit 800 × 600 Pixeln im Format 4:3. Ein 16:9-Bild ist deshalb nicht möglich, links und rechts bleiben Ränder. Für scharfe Pixel ein ganzzahliges Vielfaches wählen. 1600 × 1200 passt auf WQHD und auf 4K mit 150 % Windows-Skalierung, 2400 × 1800 nur auf 4K mit 100 %. Mit Alt+Enter schaltet das Spiel jederzeit auf Vollbild.
+Das Spiel zeichnet intern mit 800 × 600 Pixeln im Format 4:3. Mehr Auflösung gibt das Spiel nicht her, und ein 16:9-Bild ist nicht möglich, links und rechts bleiben Ränder. Mit dem Abschnitt startet das Spiel als randloses Vollbild in der echten Monitorauflösung, auch auf 4K. Der Shader xBRZ glättet dabei die Pixelkanten. Alt+Enter wechselt ins Fenster (2400 × 1800 Pixel) und zurück. Auf kleineren Bildschirmen `width` und `height` verkleinern, zum Beispiel 1600 × 1200 für WQHD. Wer scharfe Blockpixel lieber mag, nimmt `shader=Shaders\nearest-neighbor.glsl` und `boxing=true`.
 
 ## Spielstände
 
