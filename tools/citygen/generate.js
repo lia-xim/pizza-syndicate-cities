@@ -17,6 +17,10 @@ const T = JSON.parse(fs.readFileSync(path.join(__dirname, 'cache', 'tiles.json')
 }
 const K = (p, q) => p + ',' + q;
 const SPECIAL_DECO = /TUNNEL|SHIP|HAFE|^WERB|^PARK2_06$|^PARK2_12$|^S_/;
+// Gebäudearten, die in den Originalkarten auch gespiegelt vorkommen (mindestens 15 %). Alle anderen bleiben ungespiegelt.
+const MIRROR_OK = new Set(['WOHN', 'BUER', 'FABR', 'FEUE', 'GEFA', 'SCHU', 'UNIV', 'VERW']);
+// Vorplatz eines Eingangs: Eingangszelle und ihre Nachbarn außer der Grundfläche bleiben frei von Bäumen, Laternen und Tafeln
+const doorZone = buildings => { const s = new Set(); for (const b of buildings) for (let a = -1; a <= 1; a++) for (let c = -1; c <= 1; c++) s.add(K(b.p + 1 + a, b.q - 1 + c)); return s; };
 
 function rng(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
@@ -41,7 +45,12 @@ class Design {
   build(p, q, id, mirror) {
     if (!this.canBuild(p, q)) return false;
     for (const [dp, dq] of [[0, 0], [-1, 0], [0, 1], [-1, 1]]) this.set(p + dp, q + dq, 'B');
-    this.buildings.push({ p, q, id, mirror: mirror === undefined ? this.rand() < 0.5 : mirror });
+    // Läden und andere Publikumsgebäude haben den Eingang unten links ins Bild gemalt; die Originalkarten spiegeln sie nie.
+    // Gespiegelt läge die gemalte Tür unten rechts, die Leute liefen aber weiter zur Eingangszelle.
+    const kind = T.gfx[id] ? T.gfx[id].name.replace(/[0-9]*[A-D]?$/, '') : '';
+    // Zufallszahl immer ziehen, damit die abgenommenen Stadtgrundrisse unverändert bleiben
+    const m = mirror === undefined ? this.rand() < 0.5 : mirror;
+    this.buildings.push({ p, q, id, mirror: MIRROR_OK.has(kind) && m });
     return true;
   }
   object(p, q, id) { this.objects.push({ p, q, id }); }
@@ -222,6 +231,8 @@ function peopleGraph(d) {
         if (sawW && t <= 6 && ['S', 'P'].includes(d.get(p + dp * t, q + dq * t))) cand.push([k, K(p + dp * t, q + dq * t), p, q]);
       }
     }
+    // Hinweis: Ein Steg kann an einem Ladeneingang enden (Porto: CLUB1 bei 42,-4); der Eingang hängt dann nur am Steg.
+    // Absichtlich nicht geändert, weil ein anderes Wegnetz laufende Spielstände in Porto stören könnte.
     for (const c of cand.sort(() => d.rand() - 0.5)) if (steg.every(s => Math.abs(s[2] - c[2]) + Math.abs(s[3] - c[3]) >= d.stegEvery)) steg.push(c);
   }
   const doors = new Set(d.buildings.map(b => K(b.p + 1, b.q - 1)));
@@ -399,14 +410,16 @@ function build(d, outBase) {
     for (const [p, q, v] of [z.rampA, z.rampB]) setTile(p, q, v);
   }
   stats.zebras = d.zebras.length;
-  // Dekoration (Laternen, Bäume, Uferkanten) nach Bodenkachel wie in den Originalkarten
-  const doorCells = new Set(d.buildings.map(b => K(b.p + 1, b.q - 1)));
+  // Dekoration (Laternen, Bäume, Uferkanten) nach Bodenkachel wie in den Originalkarten; Vorplätze der Eingänge bleiben frei
+  const doorCells = doorZone(d.buildings), doorOnly = new Set(d.buildings.map(b => K(b.p + 1, b.q - 1)));
   for (const k of d.cls.keys()) {
     const [p, q] = k.split(',').map(Number); const [c, r] = I.fromPQ(p, q); const v = L1[I.idx(c, r)];
-    const dist = T.deco[v]; if (!dist || (d.get(p, q) === 'W' && I.DIRS.every(dir => ['W', 'X'].includes(d.get(p + I.DPQ[dir][0], q + I.DPQ[dir][1])))) || doorCells.has(k) || d.noDeco && d.noDeco(p, q)) continue;
+    const dist = T.deco[v]; if (!dist || (d.get(p, q) === 'W' && I.DIRS.every(dir => ['W', 'X'].includes(d.get(p + I.DPQ[dir][0], q + I.DPQ[dir][1])))) || doorOnly.has(k) || d.noDeco && d.noDeco(p, q)) continue;
     // Ersatzkacheln an Wasser und Kai: keine Uferobjekte (Geländer, Mauerstücke), die sonst frei im Wasser stehen
     if (stats.inexact && stats.inexact.has(k) && ['W', 'U', 'L', 'N'].includes(d.get(p, q))) continue;
+    // Zufallszahl auch auf dem Vorplatz ziehen: so bleibt die übrige Dekoration wie in den abgenommenen Karten
     const tot = Object.values(dist).reduce((a, b) => a + b, 0); let x = d.rand() * tot;
+    if (doorCells.has(k)) continue;
     for (const [o, n] of Object.entries(dist)) { if ((x -= n) < 0) { const g = T.gfx[+o & 0xfff]; if (+o && g && !SPECIAL_DECO.test(g.name)) L2[I.idx(c, r)] = +o; break; } }
   }
   for (const o of d.objects) { const [c, r] = I.fromPQ(o.p, o.q); L2[I.idx(c, r)] = o.id; }
